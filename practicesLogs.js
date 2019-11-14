@@ -38,20 +38,20 @@ const insert = (practicesToApply, date) => {
   });
 };
 
-const getTodaysPractices = () => {
+const getPracticesByDate = async (date) => {
   const practices = base("Practices Log");
   const todaysPractices = practices.select({
-    view: "Todays Practices"
+    view: "All Logged Practices",
+    filterByFormula: `IS_SAME(Date, "${date}", "day" )`
   });
+  return todaysPractices.firstPage().then(records => {
+     return records.map(record => record.get("Active Practice ID"));
 
-  todaysPractices.firstPage().then(records => {
-    return records.map(record => record.get("Active Practice ID"));
+     
   });
-
-  console.log(activePracticeIDs);
 };
 
 module.exports = {
   insert,
-  getTodaysPractices
+  getPracticesByDate
 };
