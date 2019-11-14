@@ -52,7 +52,7 @@ let practicesToApply = [];
 
     //compare existing to expected and create the missing ones
     console.log(expectedPractices);
-    console.log(existingPractices.length);
+    console.log(existingPractices.flat());
 
     const practicesToCreate = await compareExpectedAgainstExisting(
       expectedPractices,
