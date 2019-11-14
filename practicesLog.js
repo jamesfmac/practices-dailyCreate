@@ -11,7 +11,7 @@ const chunk = (array, size) => {
 };
 
 //insert our new practices
-const insert = (practicesToApply, date) => {
+const insertPractices = (practicesToApply, date) => {
   const chunkedPracticesToCreate = chunk(practicesToApply, 10);
 
   //take each chunk, create an array of objects and insert
@@ -45,13 +45,14 @@ const getPracticesByDate = async (date) => {
     filterByFormula: `IS_SAME(Date, "${date}", "day" )`
   });
   return todaysPractices.firstPage().then(records => {
-     return records.map(record => record.get("Active Practice ID"));
+     return [].concat.apply([],records.map(record => record.get("Active Practice ID")));
 
+     
      
   });
 };
 
 module.exports = {
-  insert,
+  insertPractices,
   getPracticesByDate
 };

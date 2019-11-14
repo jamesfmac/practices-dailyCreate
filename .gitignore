@@ -25,4 +25,8 @@ jspm_packages/
 .env
 .env.test
 
+#used to deploy to lambda
+deployLambda.sh
+zip.sh
+
 

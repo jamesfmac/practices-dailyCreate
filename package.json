@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start_local": "node -r dotenv/config index.js",
-    "get_practices": "node -r dotenv/config getPractices.js"
+    "locally": "node -r dotenv/config  -e \"console.log(require('./index').handler({}));\"",
+    "deploy": "./deployLambda.sh"
   },
   "author": "James McManamey",
   "license": "ISC",
