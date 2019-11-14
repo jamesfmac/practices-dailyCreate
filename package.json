@@ -1,0 +1,21 @@
+{
+  "name": "practices-airtable",
+  "version": "0.1.0",
+  "description": "Retrieve and update practices from airtable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_local": "node -r dotenv/config index.js",
+    "get_practices": "node -r dotenv/config getPractices.js"
+  },
+  "author": "James McManamey",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.7.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
