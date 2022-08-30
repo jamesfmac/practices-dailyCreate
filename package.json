@@ -13,7 +13,7 @@
   "dependencies": {
     "airtable": "^0.7.2",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27"
+    "moment-timezone": "^0.5.35"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
